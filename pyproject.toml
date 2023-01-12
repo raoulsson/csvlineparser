@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "csvlineparser_raoulsson"
+name = "csvlineparser"
 version = "0.0.1"
 authors = [
   { name="raoulsson", email="" },
