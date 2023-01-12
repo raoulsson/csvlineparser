@@ -22,9 +22,9 @@ class ICharTokenizer(ABC):
         pass
 
     @abstractmethod
-    def getPos(self) -> int:
+    def get_pos(self) -> int:
         pass
 
     @abstractmethod
-    def getSegment(self, offset: int, length: int) -> str:
+    def get_segment(self, offset: int, length: int) -> str:
         pass

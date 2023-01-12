@@ -11,70 +11,69 @@ logger = logging.getLogger(__name__)
 
 class AwareCsvContextProvider(CsvContextProvider):
 
-    def __init__(self, dataTypeMappings: dict[int, CsvDataTypeMapping] | None) -> None:
+    def __init__(self, data_type_mappings: dict[int, CsvDataTypeMapping] | None) -> None:
         super().__init__()
         self.__lineNum: int = 0
         self.__colCount: int = 0
-        self.__refData: dict[int, CsvDataTypeMapping] | None = dataTypeMappings
+        self.__refData: dict[int, CsvDataTypeMapping] | None = data_type_mappings
 
-    def getDelimiter(self) -> str:
+    def get_delimiter(self) -> str:
         """ Returns the char used to delimit columns. Defaults to comma (,) """
         return ','
 
-    def handleHeaderElement(self, inputValue: str, row: int, column: int) -> str:
+    def handle_header_element(self, input_value: str, row: int, column: int) -> str:
         """ Apply transformations to the input value, which is a header cell.
         The row and column parameters are there if you need it. Return value
         will be inserted into resulting CSV object """
         # header for glue cannot have dots (.)
-        if '.' in inputValue:
-            inputValue = inputValue.replace('.', '_')
-        return inputValue
+        if '.' in input_value:
+            input_value = input_value.replace('.', '_')
+        return input_value
 
-    def handleDataElement(self, inputValue: str, row: int, column: int) -> str:
+    def handle_data_element(self, input_value: str, row: int, column: int) -> str:
         """ Apply transformations to the input value, which is a data cell.
         The row and column parameters are there if you need it. Return value
         will be inserted into resulting CSV object """
-        if self.__lineNum == 0:
-            if '.' in inputValue:
-                inputValue = inputValue.replace('.', '_')
-        if inputValue != '':
-            if inputValue.lower() == 'true' or inputValue.lower() == 'false':
-                inputValue = inputValue.lower()
-            if '"' in inputValue:
-                inputValue = inputValue.replace('"', '""')
-            if self.__toDate(inputValue) is not None:
-                inputValue = self.__toDate(inputValue)
-            elif self.getDelimiter() in inputValue:
-                inputValue = f'"{inputValue}"'
+        if self.__lineNum == 0 and '.' in input_value:
+                input_value = input_value.replace('.', '_')
+        if input_value != '':
+            if input_value.lower() == 'true' or input_value.lower() == 'false':
+                input_value = input_value.lower()
+            if '"' in input_value:
+                input_value = input_value.replace('"', '""')
+            if self.__toDate(input_value) is not None:
+                input_value = self.__toDate(input_value)
+            elif self.get_delimiter() in input_value:
+                input_value = f'"{input_value}"'
         else:
-            inputValue = ''
+            input_value = ''
 
         if self.__refData:
-            expectedDataType = self.__refData[self.__colCount].getType()
-            if inputValue == '' and self.__refData[self.__colCount].isRequired():
-                if expectedDataType == 'double':
-                    logger.warning(f'Empty double found in column: {self.__refData[self.__colCount].getColName()}. '
+            expected_data_type = self.__refData[self.__colCount].get_type()
+            if input_value == '' and self.__refData[self.__colCount].is_required():
+                if expected_data_type == 'double':
+                    logger.warning(f'Empty double found in column: {self.__refData[self.__colCount].get_col_name()}. '
                                    f'Replacing with 0.0')
-                    inputValue = '0.0'
-                elif expectedDataType == 'int':
-                    logger.warning(f'Empty int found in column: {self.__refData[self.__colCount].getColName()}. '
+                    input_value = '0.0'
+                elif expected_data_type == 'int':
+                    logger.warning(f'Empty int found in column: {self.__refData[self.__colCount].get_col_name()}. '
                                    f'Replacing with 0')
-                    inputValue = '0'
-                elif expectedDataType == 'boolean':
-                    logger.warning(f'Empty boolean found in column: {self.__refData[self.__colCount].getColName()}. '
+                    input_value = '0'
+                elif expected_data_type == 'boolean':
+                    logger.warning(f'Empty boolean found in column: {self.__refData[self.__colCount].get_col_name()}. '
                                    f'Replacing with False')
-                    inputValue = 'false'
-                elif expectedDataType == 'datetime':
+                    input_value = 'false'
+                elif expected_data_type == 'datetime':
                     raise ValueError(
-                        f'Empty date datetime found for column: {self.__refData[self.__colCount].getColName()}')
+                        f'Empty date datetime found for column: {self.__refData[self.__colCount].get_col_name()}')
                     # logger.warning(f'Empty date datetime found for column: {self.refData[self.rowCount].name}')
-                elif expectedDataType == 'string':
-                    logger.info(f'Skipping: Empty string: {self.__refData[self.__colCount].getColName()}, '
-                                f'expected type: {expectedDataType}')
+                elif expected_data_type == 'string':
+                    logger.info(f'Skipping: Empty string: {self.__refData[self.__colCount].get_col_name()}, '
+                                f'expected type: {expected_data_type}')
                 else:
-                    raise ValueError(f'Empty value found for column: {self.__refData[self.__colCount].getColName()} '
-                                     f'and type: {expectedDataType}')
-        return inputValue
+                    raise ValueError(f'Empty value found for column: {self.__refData[self.__colCount].get_col_name()} '
+                                     f'and type: {expected_data_type}')
+        return input_value
 
     def __toDate(self, s: str) -> str | None:
         """ Check if string should be a date of format: YYYY-MM-DD or YYYY-MM-DD hh:mm:ss """

@@ -10,13 +10,13 @@ class ICsvConsumer(ABC):
         super().__init__()
 
     @abstractmethod
-    def consumeField(self, s: str) -> None:
+    def consume_field(self, s: str) -> None:
         pass
 
     @abstractmethod
-    def signalEndOfRecord(self) -> None:
+    def signal_end_of_record(self) -> None:
         pass
 
     @abstractmethod
-    def signalEndOfFile(self) -> None:
+    def signal_end_of_line(self) -> None:
         pass

@@ -13,8 +13,8 @@ class StringCharTokenizer(ICharTokenizer, ABC):
         super().__init__()
         self.__s: str = s
         self.__index: int = 0
-        self.__haveUnreadChar: bool = False
-        self.__unreadChar: str = ''
+        self.__have_unread_char: bool = False
+        self.__unread_char: str = ''
 
     def __skipCrInCrLf(self) -> None:
         if self.__s[self.__index] == '\r' and self.__index + 1 < len(self.__s) and self.__s[self.__index + 1] == '\n':
@@ -26,16 +26,16 @@ class StringCharTokenizer(ICharTokenizer, ABC):
         return c
 
     def peek(self) -> str:
-        if self.__haveUnreadChar:
-            return self.__unreadChar
+        if self.__have_unread_char:
+            return self.__unread_char
         if self.__index < len(self.__s):
             return self.__mapCrToLf(self.__s[self.__index])
         return 'EOF'
 
     def read(self) -> str:
-        if self.__haveUnreadChar:
-            self.__haveUnreadChar = False
-            return self.__unreadChar
+        if self.__have_unread_char:
+            self.__have_unread_char = False
+            return self.__unread_char
         if self.__index < len(self.__s):
             self.__skipCrInCrLf()
             ret_val = self.__mapCrToLf(self.__s[self.__index])
@@ -44,13 +44,13 @@ class StringCharTokenizer(ICharTokenizer, ABC):
         return 'EOF'
 
     def unread(self, c: str) -> None:
-        if self.__haveUnreadChar:
+        if self.__have_unread_char:
             raise CharTokenizerException('unread() cannot accept more than one pushed back character')
-        self.__haveUnreadChar = True
-        self.__unreadChar = c
+        self.__have_unread_char = True
+        self.__unread_char = c
 
-    def getPos(self) -> int:
+    def get_pos(self) -> int:
         return self.__index
 
-    def getSegment(self, offset: int, length: int) -> str:
+    def get_segment(self, offset: int, length: int) -> str:
         return self.__s[offset:offset + length]
