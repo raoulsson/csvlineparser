@@ -1,6 +1,6 @@
 import logging
 
-from src.csvlineparser.csv_consumer_interface import ICsvConsumer
+from csvlineparser.csv_consumer_interface import ICsvConsumer
 
 logger = logging.getLogger(__name__)
 

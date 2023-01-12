@@ -1,7 +1,7 @@
 import logging
 
-from src.csvlineparser.csv_consumer_interface import ICsvConsumer
-from src.csvlineparser.exceptions import IllegalStateException
+from csvlineparser.csv_consumer_interface import ICsvConsumer
+from csvlineparser.exceptions import IllegalStateException
 
 logger = logging.getLogger(__name__)
 

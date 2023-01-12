@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import logging
 
-from src.csvlineparser.char_tokenizer_interface import ICharTokenizer
-from src.csvlineparser.csv_consumer_interface import ICsvConsumer
-from src.csvlineparser.exceptions import CsvParserTooMuchDataException, CsvParserNoTermQuoteException
-from src.csvlineparser.multi_consumer import MultiConsumer
+from csvlineparser.char_tokenizer_interface import ICharTokenizer
+from csvlineparser.csv_consumer_interface import ICsvConsumer
+from csvlineparser.exceptions import CsvParserTooMuchDataException, CsvParserNoTermQuoteException
+from csvlineparser.multi_consumer import MultiConsumer
 
 logger = logging.getLogger(__name__)
 

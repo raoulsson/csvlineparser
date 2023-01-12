@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 
-from src.csvlineparser.exceptions import IllegalArgumentException
+from csvlineparser.exceptions import IllegalArgumentException
 
 logger = logging.getLogger(__name__)
 
