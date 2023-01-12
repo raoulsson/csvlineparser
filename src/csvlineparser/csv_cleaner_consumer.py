@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import logging
 
-from csvlineparser.csv_console_consumer import CsvConsoleConsumer
-from csvlineparser.csv_context_provider import CsvContextProvider
+from src.csvlineparser.csv_console_consumer import CsvConsoleConsumer
+from src.csvlineparser.csv_context_provider import CsvContextProvider
 
 logger = logging.getLogger(__name__)
 

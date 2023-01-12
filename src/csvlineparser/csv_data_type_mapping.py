@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 
-from capco_modules.capco_utils.exceptions import IllegalArgumentException
+from src.csvlineparser.exceptions import IllegalArgumentException
 
 logger = logging.getLogger(__name__)
 

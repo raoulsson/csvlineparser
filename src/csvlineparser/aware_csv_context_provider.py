@@ -3,8 +3,8 @@ from __future__ import annotations
 import datetime
 import logging
 
-from csvlineparser.csv_context_provider import CsvContextProvider
-from csvlineparser.csv_data_type_mapping import CsvDataTypeMapping
+from src.csvlineparser.csv_context_provider import CsvContextProvider
+from src.csvlineparser.csv_data_type_mapping import CsvDataTypeMapping
 
 logger = logging.getLogger(__name__)
 

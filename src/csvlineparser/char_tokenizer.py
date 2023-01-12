@@ -1,8 +1,8 @@
 import logging
 from abc import ABC
 
-from csvlineparser.char_tokenizer_interface import ICharTokenizer
-from csvlineparser.exceptions import CharTokenizerException
+from src.csvlineparser.char_tokenizer_interface import ICharTokenizer
+from src.csvlineparser.exceptions import CharTokenizerException
 
 logger = logging.getLogger(__name__)
 

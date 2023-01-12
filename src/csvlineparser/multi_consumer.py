@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 
-from csvlineparser.csv_consumer_interface import ICsvConsumer
+from src.csvlineparser.csv_consumer_interface import ICsvConsumer
 
 logger = logging.getLogger(__name__)
 
