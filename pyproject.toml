@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "csvlineparser"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="raoulsson", email="" },
 ]
-description = "A small example package"
+description = "A csv parser. Can be advised to clean columns by type too..."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
