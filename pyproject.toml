@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "csvlineparser"
-version = "0.0.5"
+version = "1.0.0"
 authors = [
-    { name = "raoulsson", email = "" },
+    { name = "raoulsson", email = "hello@raoulsson.com" },
 ]
-description = "A csv parser. Can be advised to clean columns by type too..."
+description = "A BNF grammar based CSV Parser that cleans up with messy CSV files, with optional Excel export"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
