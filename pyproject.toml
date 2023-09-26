@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "csvlineparser"
+version = "0.0.5"
+authors = [
+    { name = "raoulsson", email = "" },
+]
+description = "A csv parser. Can be advised to clean columns by type too..."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/raoulsson/csvlineparser"
