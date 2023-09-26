@@ -9,6 +9,10 @@ logger = logging.getLogger(__name__)
 
 
 class YearMonthDaySplitter(FieldSplitter):
+    """
+    Here we split a date like '2023-01-01T20:42:16.957+01:00' into 4 columns: original, year, month, day. See
+    examples/example_parser.py for usage and the way the new columns are defined.
+    """
 
     def __init__(self, ) -> None:
         super().__init__()

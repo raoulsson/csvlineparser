@@ -9,20 +9,21 @@ logger = logging.getLogger(__name__)
 
 
 class PriceCCYSplitter(FieldSplitter):
-
+    """
+    In some example columns, we have a price and a currency in the same column. Like: 1000EUR. This splitter will split
+    that into two columns: 1000 and EUR. See examples/example_parser.py for usage and the way the new columns are defined.
+    """
+    
     def __init__(self, ) -> None:
         super().__init__()
 
     def split_single_value_to_many(self, original_value: str | bool | int | float | None) -> (
             list)[Union[str, bool, int, float, None]]:
-        """ Transform a string like 'EUR100.00' to [100.00, 'EUR']. Also for negative numbers displayed as
-        '−EUR100.00'. Also single quotes in numbers are removed. """
         original_value = original_value.replace('`', '')
         original_value = original_value.replace('', '')
         if not original_value:
             return [original_value]
         if not isinstance(original_value, str):
-
             return [original_value]
         if len(original_value) < 4:
             return [original_value]
