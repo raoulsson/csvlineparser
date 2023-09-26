@@ -10,9 +10,6 @@ See in the example folder for example_parser.py and the files in the in and out 
 
 ```python
 def main():
-    """ example, parsing a csv file """
-    logger.info('Running example')
-
     """ Specify the input and output file paths """
     in_file_path = 'in/sample-raw-input.csv'
     out_file_path = 'out/sample-clean.csv'
@@ -46,10 +43,6 @@ def main():
         ['customer_comment', 'string', False, False, None, None],
     ]
 
-    file_handler = FileHandler()
-    if file_handler.file_exists(out_file_path):
-        file_handler.delete_file(out_file_path)
-
     """ At least the column_definitions are required to build the parser config """
     default_parser_config = DefaultParserConfig(column_definition, expected_header_sha)
 
@@ -62,7 +55,7 @@ if __name__ == '__main__':
 ```
 
 
-## More later...
+### Background
 
 Based on https://secondboyet.com/articles/csvparser.html by Julian M Bucknall, rewritten in Python by raoulsson.
 
@@ -82,4 +75,4 @@ BNF Grammar:
 
 ## Installation
 
-    Clone and run 'make init'
+    Clone and run 'make init'. Or pip install csvlineparser should work as well...
