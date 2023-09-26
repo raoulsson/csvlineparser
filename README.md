@@ -77,3 +77,8 @@ BNF Grammar:
 
     Clone and run 'make init'. Or, without cloning, to install it as a module, 
     'pip install csvlineparser' should work as well...
+
+    Also make sure to have these packages installed:
+        - openpyxl
+        - xlsxwriter
+        - pandas
