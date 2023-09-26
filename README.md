@@ -1,6 +1,8 @@
 # csvlineparser
 
 A CSV Parser that cleans a messy CSV file, with optional Excel export...
+The CSV Parser is based on a BNF grammar, and the parser is built using a recursive descent parser.
+Parsing line by line, character by character...
 
 See in the example folder for example_parser.py and the files in the in and out folders.
 

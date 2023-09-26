@@ -13,7 +13,7 @@ class PriceCCYSplitter(FieldSplitter):
     In some example columns, we have a price and a currency in the same column. Like: 1000EUR. This splitter will split
     that into two columns: 1000 and EUR. See examples/example_parser.py for usage and the way the new columns are defined.
     """
-    
+
     def __init__(self, ) -> None:
         super().__init__()
 
