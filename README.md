@@ -75,4 +75,5 @@ BNF Grammar:
 
 ## Installation
 
-    Clone and run 'make init'. Or, without cloning, to install it as a module, 'pip install csvlineparser' should work as well...
+    Clone and run 'make init'. Or, without cloning, to install it as a module, 
+    'pip install csvlineparser' should work as well...
