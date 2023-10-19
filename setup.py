@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='csvlineparser',
     version='1.0.0',
-    description='hello',
+    description='csvlineparser',
     url='---',
     author='raoulsson',
     author_email='hello@raoulsson.com',
