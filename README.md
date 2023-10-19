@@ -6,6 +6,18 @@ Parsing line by line, character by character...
 
 See in example/example_parser.py and the files in the in and out folders.
 
+
+### Installation of the PIP Package:
+
+Checkout: https://pypi.org/project/csvlineparser/
+
+    pip install csvlineparser
+
+or add it to your requirements.txt like to use it within your project:
+
+    csvlineparser==1.0.0
+
+
 ### From the Example
 
 ```python
