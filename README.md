@@ -4,6 +4,10 @@ A CSV Parser that cleans a messy CSV file, with optional Excel export...
 The CSV Parser is based on a BNF grammar, and the parser is built using a recursive descent parser.
 Parsing line by line, character by character...
 
+Why? Cause it's a mess, "CSV" is not always this: https://www.ietf.org/rfc/rfc4180.txt
+
+(Not saying this code here is fully compliant, but it's a start...)
+
 See in example/example_parser.py and the files in the in and out folders.
 
 
