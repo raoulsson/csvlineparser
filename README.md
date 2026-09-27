@@ -16,6 +16,6 @@ BNF Grammar:
     escapedField ::= subField ['"' '"' escapedField]
     subField ::= (any char except double quote or EOF)+
 
-## Intsallation
+## Installation
 
     pip install csvlineparser
