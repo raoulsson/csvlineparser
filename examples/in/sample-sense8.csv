@@ -1,0 +1,10 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,No.,1,Unnamed: 9,2,Unnamed: 11,3,Unnamed: 13,4,Unnamed: 15,5,Unnamed: 17
+Interviewees:,Johnny,,,,,,Capabilities,Underwriting,,Underwriting,,Underwriting,,,,,
+,,,,,,,Sub capabilities,Exposure Management,,Costing,,,,,,,
+,,,,,,,Portfolio,Property,,Property,,Property,,Property,,Property,
+Dimension,Criterion (Must),Evaluation,,,,,LoB,,,,,,,,,Storm,
+,,1,2,3,4,,,Assessment,Comments,Assessment,Comments,Assessment,Comments,Assessment,Comments,Assessment,Comments
+Process,Adherence degree,Low,Medium,High,Platinum,,,3,Johnny: FOO,3,,4,,4,,4,
+,Process Effectiveness,Low,Medium,High,Platinum,,,1,,4,,4,,4,,4,Johnny: FOO
+Controls,Control Maturity,Low,Medium,High,Platinum,,,3,,2,,2,,2,,1,
+Systems,System deliver,Low,Medium,High,Platinum,,,1,,3,,1,,1,Johnny: FOO,2,
